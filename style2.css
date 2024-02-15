@@ -1,0 +1,28 @@
+h1 {
+    width: 100%;
+    background-color: green;
+}
+
+form{
+    width: 75%;
+    border-bottom:2px solid ;
+    border-left:2px solid ;
+    border-radius:4px ;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+td {
+
+}
+
+tr {
+    width: 30%;
+}
+table {
+    border:2px solid ;
+    width: 500px;
+}

@@ -3,60 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <title>Vormid</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="script.js"></script>
 </head>
 <body>
 <h1>Küsimustik</h1>
 <form name="kusimustik">
-    <!-- teksta -->
-    <label for="nimi">Nimi:</label>
-    <INPUT TYPE="text" id="nimi" name="nimi" placeholder="Sisesta oma nimi">
-    <br>
-    <br>
-    <strong>Vali oma rühm</strong>
-    <br>
+    <label for="varv">Vali vastuste värv</label>
+    <input type = "color" id="varv" onchange="varvValik(value)">
+    <table>
+        <tr>
+            <!-- teksta -->
+            <td>
+                <label for="nimi">Nimi:</label>
+            </td>
 
-    <!-- radianupp -->
-    <br>
-    <input type="radio" id="TARgv23" name="ruhm">
-    <label for="TARgv23">TARgv23</label>
-    <br>
-    <!-- ALT + J = kasutame -->
-    <input type="radio" id="LOGgv23" name="ruhm">
-    <label for="LOGgv23">LOGgv23</label>
-    <br>
-    <input type="radio" id="TITgv23" name="ruhm">
-    <label for="TITgv23">TITgv23</label>
-    <br>
+            <td>
+                <INPUT TYPE="text" id="nimi" name="nimi" placeholder="Sisesta oma nimi"oninput="tesktKastiLugemine()">
+            </td>
+            <td>
+                <div id="vastus"></div>
+            </td>
+        </tr>
 
-    <!-- checkbox -->
-    <br>
-    <strong>
-        vail oma lemmikud
-    </strong>
-    <br>
-    <br>
-    <input type="checkbox" id="andmebaasid" name="aine" value="andmebaasid">
-    <label for="andmebaasid">andmebaasid</label>
-    <br>
-    <input type="checkbox" id="matemaatika" name="aine" value="matemaatika">
-    <label for="matemaatika">matemaatika</label>
-    <br>
-    <input type="checkbox" id="programmerimine" name="aine" value="programmerimine">
-    <label for="programmerimine">programmerimine</label>
-    <br>
-    <br>
-    <label for="kodu">Kust pärit sa oled </label>
-    <select id="kodu">
-        <option value="tuhi">vali...</option>
-        <option value="Tallinn">Tallinn</option>
-        <option value="Tartu">Tartu</option>
-        <option value="Parnu">Pärnu</option>
-        <option value="Varva">Narva</option>
-    </select>
-    <br>
-    <br>
-    <input type="button" value="OK">
+        <tr>
+            <td>
+                <strong>Vali oma rühm</strong>
+            </td>
+
+            <td>
+                <!-- ALT + J = kasutame -->
+                <input type="radio" id="TARgv23" name="ruhm" value="TARgv23" onclick="radioLugemine()">
+                <label for="TARgv23">TARgv23</label>
+                <br>
+                <input type="radio" id="LOGgv23" name="ruhm" value="LOGgv23" onclick="radioLugemine()">
+                <label for="LOGgv23">LOGgv23</label>
+                <br>
+                <input type="radio" id="TITgv23" name="ruhm" value="TITgv23" onclick="radioLugemine()">
+                <label for="TITgv23">TITgv23</label>
+            </td>
+            <td>
+                <div id="vastus2"></div>
+                <img src="" id="pilt">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- checkbox -->
+                <strong>vail oma lemmikud</strong>
+            </td>
+            <td>
+                <input type="checkbox" id="andmebaasid" name="aine" value="andmebaasid" onchange="CheckValue()">
+                <label for="andmebaasid">andmebaasid</label>
+                <br>
+                <input type="checkbox" id="matemaatika" name="aine" value="matemaatika" onchange="CheckValue()">
+                <label for="matemaatika">matemaatika</label>
+                <br>
+                <input type="checkbox" id="programmerimine" name="aine" value="programmerimine"  onchange="CheckValue()">
+                <label for="programmerimine">programmerimine</label>
+            </td>
+            <td>
+                <div id="vastus3"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="kodu"><strong>Kust pärit sa oled </strong></label>
+            </td>
+            <td>
+                <select id="kodu" onchange="selectOptionValik()">
+                    <option value="tuhi">vali...</option>
+                    <option value="Tallinn">Tallinn</option>
+                    <option value="Tartu">Tartu</option>
+                    <option value="Parnu">Pärnu</option>
+                    <option value="Varva">Narva</option>
+                </select>
+                <br>
+                <input type="range" id="km" min="0" max="200" onchange="selectOptionValik()" >km
+            </td>
+            <td>
+                <div id="vastus4"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>lemmik värvi</strong>
+            </td>
+
+            <td>
+                <input type="color" value="asdaadasdasdasd">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>lemmik number</strong>
+            </td>
+
+            <td>
+                <input type="number" value="number">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>Sünnipeäv</strong>
+            </td>
+
+            <td>
+                <input type="date" value="date">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>lemmik kuus</strong>
+            </td>
+
+            <td>
+                <select id="calendara">
+                    <option value="tuhi">vali...</option>
+                    <option value="Jaanuar">Jaanuar</option>
+                    <option value="Veebruar">Veebruar</option>
+                    <option value="April">April</option>
+                    <option value="Mai">Mai</option>
+                    <option value="Juuni">Juuni</option>
+                    <option value="Juuli">Juuli</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="Oktoober">Oktoober</option>
+                    <option value="November ">November </option>
+                    <option value="Detsember">Detsember</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="Thing"></label>
+            </td>
+
+            <td>
+                <INPUT TYPE="text" id="Thing" name="Thing" placeholder="Sisesta oma thing"">
+            </td>
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+        <tr>
+            <td>
+                <input type="button" value="OK">
+            </td>
+
+            <td>
+                <input type="reset" value="Puhasa" onclick="puhasta()">
+            </td>
+        </tr>
+
+    </table>
+
+
 
 
 </form>

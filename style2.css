@@ -26,3 +26,16 @@ table {
     border:2px solid ;
     width: 500px;
 }
+
+body {
+    background: repeating-linear-gradient(
+            -45deg,
+            purple,
+            purple 40px,
+            white 40px,
+            white 80px
+    );
+}
+form {
+    background: grey;
+}
